@@ -19,7 +19,7 @@
   "homepage": "https://paulmillr.com/noble/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulmillr/noble-bls12-381.git"
+    "url": "https://github.com/John-Tonny/noble-bls12-381.git"
   },
   "license": "MIT",
   "browser": {

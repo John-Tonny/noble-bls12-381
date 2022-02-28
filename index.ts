@@ -695,8 +695,14 @@ async function normP2Hash(point: G2Hex): Promise<PointG2> {
 
 // Multiplies generator by private key.
 // P = pk x G
-export function getPublicKey(privateKey: PrivateKey): Uint8Array {
-  return PointG1.fromPrivateKey(privateKey).toRawBytes(true);
+export function getPublicKey(privateKey: PrivateKey, isCompressed: boolean): Uint8Array {
+  var bCompressed;
+  if(isCompressed == undefined){
+    bCompressed = true;
+  }else{
+    bCompressed = isCompressed;
+  }
+  return PointG1.fromPrivateKey(privateKey).toRawBytes(bCompressed);
 }
 
 // Executes `hashToCurve` on the message and then multiplies the result by private key.
